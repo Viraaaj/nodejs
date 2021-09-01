@@ -23,3 +23,13 @@ File system module: https://nodejs.org/docs/latest/api/fs.html
 One file cannot access the variables from other files though we load files
 To share we need to export the module and then files can share the variables
 Whatever we add in module.exports other will get access to that after importing
+
+Initialize npm: npm init
+npms: https://www.npmjs.com/
+validator: https://www.npmjs.com/package/validator
+
+nodemon:
+npm i nodemon -g: installing module globally
+when we install module globally it you will not see it in package.json coz you are installing it on your machine
+Using nodemon you dont need to run node command everytime you change the file
+use nodemon app.js instead node.js
