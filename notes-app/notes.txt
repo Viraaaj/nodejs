@@ -1,0 +1,4 @@
+This file was create by node.js! (edited). appendFileSync() as only one argument
+
+Implementation of appendFileSync(),
+Implementation of appendFileSync() using array as arg

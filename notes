@@ -17,3 +17,9 @@ Why node.js:
     - non-blocking I/O : reading data from file, communication with servers
     - as node.js is non blocking IO it will continue to execute other process until it get response from servers etc.
     - Lightweight 
+
+File system module: https://nodejs.org/docs/latest/api/fs.html
+
+One file cannot access the variables from other files though we load files
+To share we need to export the module and then files can share the variables
+Whatever we add in module.exports other will get access to that after importing
