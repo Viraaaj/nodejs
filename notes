@@ -1,0 +1,19 @@
+Installation:
+    - https://nodejs.org/en/
+    - Install
+    - Open cmd and type: node -v to get version of installed node
+
+What is node.js:
+    - JS can be used on server side
+    - can create backend apps
+    - Node.js is JS runtime
+    - Integration with file systems so that you can read and write from disk
+    - chrome sends JS code to V8 engine and V8 sends results to the chrome same with node 
+        node.js send JS to V8 engine and V8 sends results to node
+    - Node.js does not have window instead it has global (open cmd=> type node=> type global)
+    - Node.js does not have document instead it has process (open cmd=> type node=> type process)
+
+Why node.js:
+    - non-blocking I/O : reading data from file, communication with servers
+    - as node.js is non blocking IO it will continue to execute other process until it get response from servers etc.
+    - Lightweight 
