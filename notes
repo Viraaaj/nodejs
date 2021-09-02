@@ -33,3 +33,24 @@ npm i nodemon -g: installing module globally
 when we install module globally it you will not see it in package.json coz you are installing it on your machine
 Using nodemon you dont need to run node command everytime you change the file
 use nodemon app.js instead node.js
+
+process.argv used to get input from user
+process.argv will give 2 default strings
+1st is path to node executable on machine
+2nd path to app.js, here notes-app-main.js
+3rd is the value that we provide while running node notes-app-main.js value
+console.log("process.argv:" + "\n", process.argv);
+
+yargs: https://www.npmjs.com/package/yargs
+when we run node notes-app-main.js add --title:"Hello" | It will show --title="Hello" in cmd and in order to get title:hello we need to perform various operations
+and yargs helps us to pass arguments easily
+When we run yargs.argv we will get object with 2 properties _:[] this is args which we add, and $0:filename
+node filename --help
+
+yargs.command():
+  - It contains of object which consists of command which is command name
+  - describe which is command description
+  - handler which is a function which take argv as a argument and gives us values
+  - builder which also takes a object which consist of title which is again an object which consists of description
+  - simply run node filename command --builder command:"Title"
+  - here, node notes-app-main.js add --title "Shopping list"
