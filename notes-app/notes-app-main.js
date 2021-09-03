@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 const yargs = require("yargs");
-const getNotes = require("./notes-main.js");
+const notes = require("./notes-main.js");
 
 // const command = process.argv[2];
 
@@ -34,15 +34,14 @@ yargs.command({
       demandOption: true, //By setting this true we need to input a title
       type: "string", //by default if you use --title only it is a boolean so it is necessary to set title
     },
-    time: {
-      describe: "Add a reminder time",
+    body: {
+      describe: "Add a note description",
       type: "string",
       demandOption: true,
     },
   },
   handler: function (argv) {
-    console.log("Title:", argv.title);
-    console.log("Time:", argv.time);
+    notes.addNote(argv.title, argv.body);
   },
 });
 
