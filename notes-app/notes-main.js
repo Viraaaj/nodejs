@@ -8,12 +8,16 @@ const getNotes = () => {
 const addNote = (title, body) => {
   const notes = loadNotes();
 
-  const duplicateNotes = notes.filter((note) => {
-    // return false; //if we return true filter will keep duplicateNotes
-    return note.title === title;
-  });
+  //filter will return array of matches
+  // const duplicateNotes = notes.filter((note) => {
+  //   // return false; //if we return true filter will keep duplicateNotes
+  //   return note.title === title;
+  // });
 
-  if (duplicateNotes.length === 0) {
+  //find will return the first match only
+  const duplicateNoteSingle = notes.find((note) => note.title === title);
+
+  if (!duplicateNoteSingle) {
     notes.push({
       title: title,
       body: body,
@@ -50,6 +54,18 @@ const notesList = () => {
   });
 };
 
+const readNote = (title) => {
+  const list = loadNotes();
+  const readNote = list.find((note) => note.title === title); //When using file always use () after arrow
+
+  if (readNote) {
+    console.log(chalk.bgGreenBright.black("Note:", readNote.title));
+    console.log(chalk.bgGreenBright.black("Body:", readNote.body));
+  } else {
+    console.log(chalk.bgRed.black("No note available"));
+  }
+};
+
 const saveNotes = (notes) => {
   const dataJSON = JSON.stringify(notes);
   fs.writeFileSync("notes.json", dataJSON);
@@ -70,4 +86,5 @@ module.exports = {
   addNote: addNote,
   removeNote: removeNote,
   notesList: notesList,
+  readNote: readNote,
 };
