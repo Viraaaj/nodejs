@@ -54,3 +54,14 @@ yargs.command():
   - builder which also takes a object which consist of title which is again an object which consists of description
   - simply run node filename command --builder command:"Title"
   - here, node notes-app-main.js add --title="Shopping list"
+
+
+Debugging node application:
+    - using console.log
+    - using debugger:
+        - instead of console.log() write only "debugger" and in cmd instead of node app.js write node inspect app.js
+        - Now go to chrome and search node://inspect
+        - click inspect
+        - click add workspace and add app folder
+        - Start debugging
+        - Play with console
