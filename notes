@@ -53,4 +53,4 @@ yargs.command():
   - handler which is a function which take argv as a argument and gives us values
   - builder which also takes a object which consist of title which is again an object which consists of description
   - simply run node filename command --builder command:"Title"
-  - here, node notes-app-main.js add --title "Shopping list"
+  - here, node notes-app-main.js add --title="Shopping list"
