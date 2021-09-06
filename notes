@@ -1,22 +1,9 @@
-Installation:
-    - https://nodejs.org/en/
-    - Install
-    - Open cmd and type: node -v to get version of installed node
+Installation: - https://nodejs.org/en/ - Install - Open cmd and type: node -v to get version of installed node
 
-What is node.js:
-    - JS can be used on server side
-    - can create backend apps
-    - Node.js is JS runtime
-    - Integration with file systems so that you can read and write from disk
-    - chrome sends JS code to V8 engine and V8 sends results to the chrome same with node 
-        node.js send JS to V8 engine and V8 sends results to node
-    - Node.js does not have window instead it has global (open cmd=> type node=> type global)
-    - Node.js does not have document instead it has process (open cmd=> type node=> type process)
+What is node.js: - JS can be used on server side - can create backend apps - Node.js is JS runtime - Integration with file systems so that you can read and write from disk - chrome sends JS code to V8 engine and V8 sends results to the chrome same with node
+node.js send JS to V8 engine and V8 sends results to node - Node.js does not have window instead it has global (open cmd=> type node=> type global) - Node.js does not have document instead it has process (open cmd=> type node=> type process)
 
-Why node.js:
-    - non-blocking I/O : reading data from file, communication with servers
-    - as node.js is non blocking IO it will continue to execute other process until it get response from servers etc.
-    - Lightweight 
+Why node.js: - non-blocking I/O : reading data from file, communication with servers - as node.js is non blocking IO it will continue to execute other process until it get response from servers etc. - Lightweight
 
 File system module: https://nodejs.org/docs/latest/api/fs.html
 
@@ -44,24 +31,22 @@ console.log("process.argv:" + "\n", process.argv);
 yargs: https://www.npmjs.com/package/yargs
 when we run node notes-app-main.js add --title:"Hello" | It will show --title="Hello" in cmd and in order to get title:hello we need to perform various operations
 and yargs helps us to pass arguments easily
-When we run yargs.argv we will get object with 2 properties _:[] this is args which we add, and $0:filename
+When we run yargs.argv we will get object with 2 properties \_:[] this is args which we add, and $0:filename
 node filename --help
 
 yargs.command():
-  - It contains of object which consists of command which is command name
-  - describe which is command description
-  - handler which is a function which take argv as a argument and gives us values
-  - builder which also takes a object which consist of title which is again an object which consists of description
-  - simply run node filename command --builder command:"Title"
-  - here, node notes-app-main.js add --title="Shopping list"
 
+- It contains of object which consists of command which is command name
+- describe which is command description
+- handler which is a function which take argv as a argument and gives us values
+- builder which also takes a object which consist of title which is again an object which consists of description
+- simply run node filename command --builder command:"Title"
+- here, node notes-app-main.js add --title="Shopping list"
 
-Debugging node application:
-    - using console.log
-    - using debugger:
-        - instead of console.log() write only "debugger" and in cmd instead of node app.js write node inspect app.js
-        - Now go to chrome and search node://inspect
-        - click inspect
-        - click add workspace and add app folder
-        - Start debugging
-        - Play with console
+Debugging node application: - using console.log - using debugger: - instead of console.log() write only "debugger" and in cmd instead of node app.js write node inspect app.js - Now go to chrome and search node://inspect - click inspect - click add workspace and add app folder - Start debugging - Play with console
+
+Weather api: weatherstack.com
+npm request: https://www.npmjs.com/package/request
+npm request (alternative): https://www.npmjs.com/package/postman-request
+
+weater app: - package.json: npm init => cut current line => npm init -y (set all values automatically)
