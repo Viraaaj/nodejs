@@ -49,4 +49,10 @@ Weather api: weatherstack.com
 npm request: https://www.npmjs.com/package/request
 npm request (alternative): https://www.npmjs.com/package/postman-request
 
-weater app: - package.json: npm init => cut current line => npm init -y (set all values automatically)
+weather app:
+
+1. package.json: npm init => cut current line => npm init -y (set all values automatically)
+2. Explore more about weatherstack: https://weatherstack.com/documentation
+3. mapbox: https://mapbox.com/ => spi docs => search => geocoding
+
+Chrome extension: json formatter
