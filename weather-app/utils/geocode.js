@@ -6,17 +6,21 @@ const geoCode = (address, callback) => {
     encodeURIComponent(address) +
     ".json?access_token=pk.eyJ1IjoiYmF0bWFuMTI5OSIsImEiOiJja3Q4cnRqc2MxNTdnMm9wZWJ2d2lqdjVwIn0.Wwpp1gd7YlZc4n5VWV2-sg&limit=1";
 
-  request({ url: url, json: true }, (error, response) => {
+  request({ url, json: true }, (error, { body }) => {
+    const geoCodeFeatures = body.features[0];
+
+    const geoCodeObject = {
+      latitude: geoCodeFeatures.center[1],
+      longitude: geoCodeFeatures.center[0],
+      location: geoCodeFeatures.place_name,
+    };
+
     if (error) {
       callback("Unable to connect location server", undefined);
-    } else if (response.body.features.length === 0) {
+    } else if (body.features.length === 0) {
       callback("unable to find longitude and latitude of location", undefined);
     } else {
-      callback(undefined, {
-        latitude: response.body.features[0].center[1],
-        longitude: response.body.features[0].center[0],
-        location: response.body.features[0].place_name,
-      });
+      callback(undefined, geoCodeObject);
     }
   });
 };

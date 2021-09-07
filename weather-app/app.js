@@ -44,18 +44,21 @@ const geoCode = require("./utils/geocode");
 const address = process.argv[2];
 
 if (address) {
-  geoCode(address, (error, data) => {
+  //Here we need to pass an empty object while destructuring coz if there is an error we will get undefined as a data and we cannot destructure it
+  //Hence if we pass empty object and there is a error it will take reference of that empty object
+  //If we have value use desctured values if we dont have values use empty object
+  geoCode(address, (error, { latitude, longitude, location } = {}) => {
     if (error) {
       return console.log("geocode error:", error);
     }
     // Using return here will stop execution on above line and following code will not execute
 
-    forecast(data.latitude, data.longitude, (error, forecastData) => {
+    forecast(latitude, longitude, (error, forecastData) => {
       if (error) {
         return console.log("forecast error:", error);
       }
 
-      console.log(data.location);
+      console.log(location);
       console.log(forecastData);
     });
   });
