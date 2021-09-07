@@ -56,3 +56,5 @@ weather app:
 3. mapbox: https://mapbox.com/ => spi docs => search => geocoding
 
 Chrome extension: json formatter
+
+When using asynchronous functions do not use return instead use callback and use the value: playground => callbacks.js
