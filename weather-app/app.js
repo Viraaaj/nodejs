@@ -11,19 +11,30 @@ request({ url: url, json: true }, (error, response) => {
 
   //   console.log("Weather api data current:", response.body.current);
 
-  console.log(
-    `${response.body.current.weather_descriptions[0]}. It is currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees out.`
-  );
+  if (error) {
+    console.log("Unable to connect weather server");
+  } else if (response.body.error) {
+    console.log("unable to find location");
+  } else {
+    console.log(
+      `${response.body.current.weather_descriptions[0]}. It is currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees out.`
+    );
+  }
 });
 
 //Getting longitude and latitude of location | mapbox
-
 const geocodeUrl =
   "https://api.mapbox.com/geocoding/v5/mapbox.places/Pune.json?access_token=pk.eyJ1IjoiYmF0bWFuMTI5OSIsImEiOiJja3Q4cnRqc2MxNTdnMm9wZWJ2d2lqdjVwIn0.Wwpp1gd7YlZc4n5VWV2-sg&limit=1";
 
 request({ url: geocodeUrl, json: true }, (error, response) => {
   //   console.log("Mapbox response:", response.body);
-  console.log(
-    `Mapbox response longitude and latitude: ${response.body.features[0].center[0]}, ${response.body.features[0].center[1]}`
-  );
+  if (error) {
+    console.log("Unable to connect maobox server");
+  } else if (response.body.features.length === 0) {
+    console.log("unable to find longitude and latitude of location");
+  } else {
+    console.log(
+      `Mapbox response longitude and latitude: ${response.body.features[0].center[0]}, ${response.body.features[0].center[1]}`
+    );
+  }
 });
